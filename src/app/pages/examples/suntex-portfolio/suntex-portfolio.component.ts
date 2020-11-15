@@ -20,7 +20,7 @@ export class SuntexPortfolioComponent implements OnInit {
     },
     { name : 'Viscose Fibre (VSF)', 
       type : 'textile',
-      content : `From 1 Denier to 1.8 Denier. Length 28 mm to 36 mm.<br />Origin : India, Indonesia, China. <br />`,
+      content : `From 1 Denier to 1.8 Denier. Length 28 mm to 36 mm. Origin : India, Indonesia, China.`,
       imagePath : 'assets/img/ViscoseFibre.png'
     },    
     { name : 'Yarn', 

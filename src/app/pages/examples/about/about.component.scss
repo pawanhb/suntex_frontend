@@ -20,9 +20,42 @@
     text-transform: none;
   }
 
+  .card-register .card-header img {
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -150px;
+    border-radius: 20%;
+    width: 400px;
+    height: 315px;
+}
+
+.card-register .card-header {
+  padding: 0 0 10px;
+  overflow: hidden;
+}
+
   @media screen and (max-width: 576px) {
     .typography-line span {
       width: 70px;
       margin-left: 5px;
+    }
+
+    .card-register .card-header .card-title {
+        position: relative;
+        font-size: 3em;
+        font-weight: 900;
+        color: #222a42;
+        text-transform: lowercase;
+        margin-left: -5px;
+        z-index: 1;
+    }
+
+    .card-register .card-header img {
+        position: absolute;
+        margin-left: -50px;
+        margin-top: -130px;
+        border-radius: 20%;
+        width: 300px;
+        height: 330px;
     }
   }

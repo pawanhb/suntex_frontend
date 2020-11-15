@@ -164,18 +164,18 @@ id="navbar-top"
 
                       <div class="card">
                         
-                        <div style="display:flex;">
-                            <div id="address" class="bg-danger" style="margin:2px; padding:5px; max-width: 50%; text-align: center;">
+                        <div class="div-group">
+                            <div id="address" class="bg-info div-addr">
                                 <i class="fa fa-map-marker fa-2x"> </i>
                                 <h2>Our Address</h2>
                                 <h4>C403 Sakai Mauli, Sakai Nagar, Umela, Naigaon (W), Mumbai</h4>
                             </div>
-                            <div id="email" class="bg-danger" style="margin:2px; padding:5px; min-width: 25%; max-width: 25%; text-align: center;">
+                            <div id="email" class="bg-info div-email">
                                 <i class="fa fa-envelope fa-2x"> </i>
                                 <h2>Email Us</h2>
                                 <h4>kiran@suntex.com</h4>
                             </div>
-                            <div id="call" class="bg-danger" style="margin:2px; padding:5px; min-width: 25%; max-width: 25%; text-align: center;">
+                            <div id="call" class="bg-info div-phone" >
                                     <i class="fa fa-phone fa-rotate-90 fa-2x"> </i>
                                     <h2>Call Us</h2>
                                     <h4>+91-9870374742</h4>
@@ -183,17 +183,17 @@ id="navbar-top"
 
                         </div>
 
-                        <div style="display:flex">
-                            <div id="map" style="padding:5px; max-width: 50%">
+                        <div class="div-group">
+                            <div id="div-map">
                               <div class="mapouter">
                                 <div class="gmap_canvas">
-                                  <iframe width="400" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=Sakai%20Mauli%2C%20Sakai%20Nagar%2C%20Umela%2C%20Naigaon%20(W)&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="2" marginwidth="2">
+                                  <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Sakai%20Mauli%2C%20Sakai%20Nagar%2C%20Umela%2C%20Naigaon%20(W)&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="2" marginwidth="2">
                                   </iframe>
                                   <a href="https://putlocker-is.org"></a>
                                 </div>
-                                <style>.mapouter{position:relative;text-align:right;height:300px;width:400px;}.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:400px;}</style></div>
+                                <style></style></div>
                             </div>
-                            <div id="contactform" style="padding:2px;  max-width: 50%;  min-width: 50% ">
+                            <div id="contactform" class="contact-form">
                               <div style="display:flex;width:100%" >
                                 <div class="input-group-prepend" style="padding:2px;width:100%">
                                   
@@ -203,6 +203,7 @@ id="navbar-top"
                                   type="text"
                                   (focus)="focus = true"
                                   (blur)="focus = false"
+                                  [(ngModel)]="senderName"
                                 />
                                 </div>
                               
@@ -215,6 +216,7 @@ id="navbar-top"
                                   type="text"
                                   (focus)="focus = true"
                                   (blur)="focus = false"
+                                  [(ngModel)]="senderEmail"
                                 />
                                 </div>
                               
@@ -227,20 +229,42 @@ id="navbar-top"
                                 type="text"
                                 (focus)="focus = true"
                                 (blur)="focus = false"
+                                [(ngModel)]="subject"
                               />
                             </div>
 
                             <div style="display:flex;width:100%; padding:2px;" >
-                              <textarea name="enquiry" placeholder="Enquiry" id="" cols="30" rows="10" ></textarea>
+                              <textarea name="enquiry" 
+                                placeholder="Enquiry" 
+                                id="" cols="30" rows="10" 
+                                [(ngModel)]="emailText"
+                                ></textarea>
                             </div>
 
                             <div class="card-footer">
                               <a
                                 class="btn btn-danger btn-round btn-lg"
-                                href="javascript:void(0)"
+                                (click)="sendEnquiry()"
                               >
                                 Send Enquiry
                               </a>
+
+                              <alert *ngIf="emailsuccess" class="alert-with-icon" [type]="'success alert-with-icon'"  [dismissible]="true">
+                                <span class=" tim-icons icon-trophy" data-notify="icon">
+                                </span>
+                                <span>
+                                  {{message}}
+                                </span>
+                              </alert>
+
+                              <alert *ngIf="emailerror" class="alert-with-icon" [type]="'success alert-with-icon'"  [dismissible]="true">
+                                <span class=" tim-icons icon-trophy" data-notify="icon">
+                                </span>
+                                <span>
+                                  {{message}}
+                                </span>
+                              </alert>
+
                             </div>
 
                             </div>
