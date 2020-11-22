@@ -1,3 +1,17 @@
+.rotate {
+  animation: spin 20s infinite linear;
+  position: absolute; 
+  height: 150px;
+  width: 150px;
+  left: 43%;
+  bottom: 67%;
+}
+
+/* rotate 360 key for refresh btn */
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } } 
+
 
   @media screen and (max-width: 576px) {
     .shift-left{

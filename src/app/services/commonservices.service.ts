@@ -9,6 +9,6 @@ export class CommonservicesService {
   constructor(private http : HttpClient) { }
 
   sendEnquiry(req){
-    return this.http.post('http://localhost:3000/sendMail', req);
+    return this.http.post('http://localhost:3002/sendMail', req);
   }
 }
