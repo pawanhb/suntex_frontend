@@ -157,11 +157,15 @@
       <div class="content-center brand">
         <h1 class="h1-seo shift-left">Suntex</h1>
         <h3>
-          A one stop solution for all your textile, agri and chemical needs.
+          A one stop solution for all your Textile, Agro and Chemical needs.
         </h3>
 
         <button class="btn btn-primary btn-round" [routerLink]="['/about']">Get Started</button>
-
+        <div class="icon-div">
+          <div *ngIf="mobile" class="padd-5"> <a href="mailto:kiran@suntexltd.com" style="color:white"> <span class=" fa fa-envelope fa-2x"> </span></a></div>
+          <div *ngIf="mobile" class="padd-5"><a href="tel:+919870374742" style="color:white"> <span class=" fa fa-phone fa-rotate-90 fa-2x"> </span> </a></div>
+          <div *ngIf="mobile" class="padd-5"><a href="whatsapp://send?phone=919870374742" style="color:white"><span class="fab fa-whatsapp fa-2x"> </span></a></div>
+        </div>  
       </div>
     </div>
   </div>

@@ -9,7 +9,7 @@ id="navbar-top"
       class="navbar-brand"
       [routerLink]="['/home']"
       placement="bottom"
-      tooltip="Traders in textile, agri and chemical products"
+      tooltip="Suppliers of textile, agro and chemical products"
     >
         <span>
           <img
@@ -103,7 +103,7 @@ id="navbar-top"
                 src="assets/img/home-icon.png"
               />
       
-              <p class="d-lg-none d-xl-none">Home</p></a>
+              <p class="d-lg-none d-xl-none" style="margin-left:15px;">Home</p></a>
       </li>
       <li class="dropdown nav-item" dropdown>
         <a
@@ -112,7 +112,7 @@ id="navbar-top"
           dropdownToggle
           href="javascript:void(0)"
         >
-          <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Links
+          <i class="fa fa-cogs d-lg-none d-xl-none "> </i> <span style="margin-left:3px;"> Links</span>
         </a>
         <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
           <a
@@ -136,7 +136,7 @@ id="navbar-top"
   </div>
 </div>
 </nav>
-
+<div class="loader" [hidden]="!showSpinner"></div>
 <div class="wrapper">
   <div class="page-header">
     <div class="page-header-image"></div>
@@ -156,44 +156,68 @@ id="navbar-top"
 
                 <h3 class="card-title">Contact Us</h3>
               </div>
-
-
+              
                   <div class="row">
-                    <div class="col-md-10 ml-auto col-xl-9 mr-auto">
-
-
+                    <div class="inner-row">
                       <div class="card">
-                        
+                        <alert *ngIf="emailsuccess" class="alert-with-icon" [type]="'success alert-with-icon'">
+                          <span class=" tim-icons icon-trophy" data-notify="icon">
+                          </span>
+                          <span>
+                            {{message}}
+                          </span>
+                          <span (click)="closeNotification()" style="float:right;"><i class="fas fa-times"></i></span>
+                        </alert>
+
+                        <alert *ngIf="emailerror" class="alert-with-icon" [type]="'danger alert-with-icon'" >
+                          <span class=" tim-icons icon-bulb-63" data-notify="icon">
+                          </span>
+                          <span>
+                            {{message}}
+                          </span>
+                          <span (click)="closeNotification()" style="float:right;"><i class="fas fa-times"></i></span>
+                        </alert>
+
+
+                        <alert [hidden]="!inputError"
+                          class="alert-with-icon"
+                          [type]="'warning alert-with-icon'"
+                          >
+                          <span class="tim-icons icon-bulb-63" data-notify="icon"> </span>
+                          <span>
+                            {{message}}
+                          </span>
+                          <span (click)="closeNotification()" style="float:right;"><i class="fas fa-times"></i></span>
+                        </alert>
+
                         <div class="div-group">
-                            <div id="address" class="bg-info div-addr">
-                                <i class="fa fa-map-marker fa-2x"> </i>
-                                <h2>Our Address</h2>
-                                <h4>C403 Sakai Mauli, Sakai Nagar, Umela, Naigaon (W), Mumbai</h4>
-                            </div>
-                            <div id="email" class="bg-info div-email">
-                                <i class="fa fa-envelope fa-2x"> </i>
-                                <h2>Email Us</h2>
-                                <h4>kiran@suntex.com</h4>
-                            </div>
-                            <div id="call" class="bg-info div-phone" >
-                                    <i class="fa fa-phone fa-rotate-90 fa-2x"> </i>
-                                    <h2>Call Us</h2>
-                                    <h4>+91-9870374742</h4>
+                            <div id="contact-info-div">
+                              <div id="address" class="div-addr padd-2  ">
+                                <div class="padd-2"><span class="fa fa-map-marker"></span> </div>                             
+                                <div class="padd-2 full-div" style="text-align:left;">Suntex, C403 Sakai Mauli, Sakai Nagar, Umela, Naigaon (W), Mumbai</div>
+                              </div>
+                              <div id="email" class="div-addr padd-2">
+                                <div class="padd-2"><a href="mailto:kiran@suntexltd.com" style="color:white"><span class=" fa fa-envelope "> </span></a> </div>
+                                <div class="padd-2 text-left-center contact-info-text" style="margin-top:5px;text-align:left;"><a href="mailto:kiran@suntexltd.com" style="color:white">kiran@suntexltd.com</a></div>
+                              </div>
+                              <div id="call" class="div-addr padd-2" >
+                                <div *ngIf="!mobile" class="padd-2"><span class=" fa fa-phone fa-rotate-90 "> </span></div>
+                                <div *ngIf="mobile" class="padd-2 contact-info-text"><a href="tel:+919870374742" style="color:white"> <span class=" fa fa-phone fa-rotate-90 "> </span> </a></div>
+                                <div class="padd-2 text-left-center contact-info-text" style="margin-top:5px;text-align:left;">+91-9870374742</div>
+                              </div>
+                              <div id="call" class="div-addr padd-2" >
+                                <div *ngIf="!mobile" class="padd-2"><span class="fab fa-whatsapp "> </span></div>
+                                <div *ngIf="mobile" class="padd-2 contact-info-text"><a href="whatsapp://send?phone=919870374742" style="color:white"><span class="fab fa-whatsapp "> </span></a></div>
+                                <div class="padd-2 text-left-center contact-info-text" style="margin-top:5px;text-align:left;">+91-9870374742</div>
+                              </div>
+
                             </div>
 
-                        </div>
 
-                        <div class="div-group">
-                            <div id="div-map">
-                              <div class="mapouter">
-                                <div class="gmap_canvas">
-                                  <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=Sakai%20Mauli%2C%20Sakai%20Nagar%2C%20Umela%2C%20Naigaon%20(W)&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="2" marginwidth="2">
-                                  </iframe>
-                                  <a href="https://putlocker-is.org"></a>
-                                </div>
-                                <style></style></div>
-                            </div>
+                            <!--Contact Form -->
+                            
                             <div id="contactform" class="contact-form">
+                                
                               <div style="display:flex;width:100%" >
                                 <div class="input-group-prepend" style="padding:2px;width:100%">
                                   
@@ -213,13 +237,25 @@ id="navbar-top"
                                   <input
                                   class="form-control"
                                   placeholder="Your Email"
-                                  type="text"
+                                  type="email"
                                   (focus)="focus = true"
                                   (blur)="focus = false"
                                   [(ngModel)]="senderEmail"
+                                  [email]=true
                                 />
                                 </div>
                               
+                            </div>
+
+                            <div style="display:flex;width:100%; padding:2px;" >
+                              <input
+                                class="form-control"
+                                placeholder="Mobile Ex. +19876543210"
+                                type="text"
+                                (focus)="focus = true"
+                                (blur)="focus = false"
+                                [(ngModel)]="mobileNo"
+                              />
                             </div>
 
                             <div style="display:flex;width:100%; padding:2px;" >
@@ -235,6 +271,7 @@ id="navbar-top"
 
                             <div style="display:flex;width:100%; padding:2px;" >
                               <textarea name="enquiry" 
+                              style="padding:10px;"
                                 placeholder="Enquiry" 
                                 id="" cols="30" rows="10" 
                                 [(ngModel)]="emailText"
@@ -249,25 +286,17 @@ id="navbar-top"
                                 Send Enquiry
                               </a>
 
-                              <alert *ngIf="emailsuccess" class="alert-with-icon" [type]="'success alert-with-icon'"  [dismissible]="true">
-                                <span class=" tim-icons icon-trophy" data-notify="icon">
-                                </span>
-                                <span>
-                                  {{message}}
-                                </span>
-                              </alert>
-
-                              <alert *ngIf="emailerror" class="alert-with-icon" [type]="'success alert-with-icon'"  [dismissible]="true">
-                                <span class=" tim-icons icon-trophy" data-notify="icon">
-                                </span>
-                                <span>
-                                  {{message}}
-                                </span>
-                              </alert>
+                             
+                              
 
                             </div>
 
                             </div>
+                            <!-- Contact form end -->
+                        </div>
+
+                        <div class="div-group">
+                            
                             
 
                             

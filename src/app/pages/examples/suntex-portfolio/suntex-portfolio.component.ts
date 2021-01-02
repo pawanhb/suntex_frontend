@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuntexPortfolioComponent implements OnInit {
 
+  isCollapsed = true;
+
   constructor() { }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
   portfolio = [

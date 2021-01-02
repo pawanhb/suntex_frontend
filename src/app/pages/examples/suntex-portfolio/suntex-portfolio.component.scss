@@ -34,6 +34,12 @@
   overflow: hidden;
 }
 
+.round-img-class{
+  width: 100px; 
+  height: 89px; 
+  border-radius:50%
+}
+
   @media screen and (max-width: 576px) {
     .typography-line span {
       width: 70px;
@@ -61,6 +67,12 @@
 
   .footer .title {
     text-align: center !important;
+  }
+
+  .round-img-class{
+    width: 100px; 
+    height: 76px; 
+    border-radius:50%
   }
 
   }

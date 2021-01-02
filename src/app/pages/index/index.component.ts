@@ -15,10 +15,14 @@ export class IndexComponent implements OnInit, OnDestroy {
   pagination = 3;
   pagination1 = 1;
   constructor() {}
+
+  mobile = false;
+
   scrollToDownload(element: any) {
     element.scrollIntoView({ behavior: "smooth" });
   }
   ngOnInit() {
+    this.mobile = (/Android|webOS|iPhone|BlackBerry|IEMobile|Opera Mini|Opera Mobi/i.test(navigator.userAgent)) ? true : false;
     var body = document.getElementsByTagName("body")[0];
     body.classList.add("index-page");
 

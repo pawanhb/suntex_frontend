@@ -1,6 +1,78 @@
+.loader {
+    border: 16px solid #525f7f; /* Light grey */
+    border-top: 16px solid #fd5d93; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    margin-left: 35%;
+    margin-top: 25%;
+    z-index: 11;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+.inner-row{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.text-left-center{
+    text-align: left;
+    min-width: 175%;
+}
+
+.contact-info-text{
+    margin-left: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+span.fa {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.6em;
+    font-size: 1em;
+}
+
+span.fab {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #888;
+    padding: 0.5em 0.6em;
+    font-size: 1em;
+}
+
+span.fa:hover {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #fd5d93;
+    padding: 0.5em 0.6em;
+    color: #fd5d93;
+}
+
+span.fab:hover {
+    display: inline-block;
+    border-radius: 60px;
+    box-shadow: 0px 0px 2px #fd5d93;
+    padding: 0.5em 0.6em;
+    color: #fd5d93;
+}
+
 textarea:focus { 
     outline: none !important;
     border-color: #e44cc4;
+}
+
+.icon-border{
+    border: 2px solid white;
+    border-radius: 25%;
 }
 
 textarea{
@@ -28,6 +100,8 @@ textarea{
     max-width: 50%; 
     text-align: center;
     border-radius : 2px;
+    display: flex;
+    min-width: fit-content;
 }
 
 .div-email, .div-phone{
@@ -73,9 +147,9 @@ iframe{
     position: absolute;
     margin-left: -50px;
     margin-top: -150px;
-    border-radius: 20%;
-    width: 480px;
-    height: 350px;
+    border-radius: 17%;
+    width: 460px;
+    height: 320px;
 }
 
 .card-register .card-header {
@@ -83,7 +157,30 @@ iframe{
   overflow: hidden;
 }
 
+.padd-2{
+    padding : 2%;
+}
+
 @media (max-width: 550px) {
+
+    .loader {
+        border: 10px solid #525f7f; /* Light grey */
+        border-top: 10px solid #fd5d93; /* Blue */
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+        position: absolute;
+        margin-left: 35%;
+        margin-top: 55%;
+        z-index: 11;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
 
     .div-group {
       flex-direction: column;
@@ -134,8 +231,8 @@ iframe{
         margin-left: -50px;
         /*margin-top: -150px;*/
         border-radius: 20%;
-        width: 285px;
-        height: 220px;
+        width: 300px;
+        height: 175px;
         margin-top: 0px;
         padding: 0 0 10px;
     }
@@ -177,7 +274,50 @@ iframe{
 
     .footer .title {
         text-align: center !important;
-      }
+    }
+
+    span.fa {
+        display: inline-block;
+        border-radius: 60px;
+        box-shadow: 0px 0px 2px #888;
+        padding: 0.5em 0.6em;
+    }
+
+    span.fab {
+        display: inline-block;
+        border-radius: 60px;
+        box-shadow: 0px 0px 2px #888;
+        padding: 0.5em 0.6em;
+    }
+    
+    span.fa:hover {
+        display: inline-block;
+        border-radius: 60px;
+        box-shadow: 0px 0px 2px #fd5d93;
+        padding: 0.5em 0.6em;
+        color: #fd5d93;
+    }
+
+    span.fab:hover {
+        display: inline-block;
+        border-radius: 60px;
+        box-shadow: 0px 0px 2px #fd5d93;
+        padding: 0.5em 0.6em;
+        color: #fd5d93;
+    }
+
+    .text-left-center{
+        text-align: left;
+        margin-top: 4px;
+        min-width: fit-content;
+        margin-left: 10px;
+    }
+
+    .contact-info-text{
+        margin-left: 0px;
+        text-decoration: none;
+        color: white;
+    }
   }
 
 

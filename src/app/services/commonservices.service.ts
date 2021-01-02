@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonservicesService {
 
-  constructor(private http : HttpClient) { }
+  headers : HttpHeaders;
+
+  constructor(private http : HttpClient) { 
+    this.headers = new HttpHeaders();
+    this.headers.append('Accept',['application/json', 'text/plain', '*/*'])
+    this.headers.append('Content-Type', 'application/json');
+    this.headers.append('Access-Control-Allow-Origin', '*');
+  }
 
   sendEnquiry(req){
-    return this.http.post('http://localhost:3002/sendMail', req);
+    return this.http.post('http://localhost:8080/suntex/sendEmail', req);
   }
 }
