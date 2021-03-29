@@ -23,6 +23,7 @@ export class ContactusComponent implements OnInit {
   mobile = false;
   showSpinner = false;
   mobileNo = "";
+  company = "";
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -36,10 +37,10 @@ export class ContactusComponent implements OnInit {
     this.emailerror = false;
     this.emailsuccess = false;
 
-    if( this.senderName === "" || this.senderEmail  === "" || this.subject  === "" || this.emailText === "" || this.mobileNo === ""){
+    if( this.senderName === "" || this.senderEmail  === "" || this.subject  === "" || this.emailText === "" || this.mobileNo === "" || this.company === ""){
       this.inputError = true;
       this.message = "All input fields are mandatory, please enter missing values";
-      
+      return;
     } else if ( ! validMobileRegex.test(this.mobileNo) ){
       this.inputError = true;
       this.message = "Invalid Mobile";
@@ -77,6 +78,7 @@ export class ContactusComponent implements OnInit {
         this.subject = "";
         this.emailText = "";
         this.mobileNo = "";
+        this.company = "";
       } else {
         this.emailsuccess = false;
         this.emailerror = true;
@@ -86,6 +88,7 @@ export class ContactusComponent implements OnInit {
         this.subject = "";
         this.emailText = "";
         this.mobileNo = "";
+        this.company = "";
       }
       this.showSpinner = false;
     }, (error)=>{

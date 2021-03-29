@@ -49,7 +49,7 @@ export class SuntexPortfolioComponent implements OnInit {
     
     { name : 'PVC Resin', 
     type : 'chemical',
-    content : `PVC Resin of India, China, Korea, Taiwan and Vietnam origin.`,
+    content : `Suspension Injection Grade from low K value to high K value PVC Resin of India, China, Korea, Taiwan, Japan and Vietnam origin.`,
     imagePath : 'assets/img/PVCResin.png'
     },
     { name : 'Soda Ash', 
@@ -59,29 +59,45 @@ export class SuntexPortfolioComponent implements OnInit {
     },
     { name : 'PET Resins', 
     type : 'chemical',
-    content : `Bottle Grade, Textile Grade, Film grade from China, Korea, Taiwan.`,
+    content : `Bottle grade, Textile grade, Film grade from China, Korea, Taiwan and Vietnam origin.`,
     imagePath : 'assets/img/PetResin.png'
     },
-    { name : 'Sugar', 
-    type : 'agro',
-    content : `India origin S30 Sugar. Brazil, Thailand, Malaysia origin – ICUMSA45 Sugar.`,
-    imagePath : 'assets/img/Sugar.png'
+    { name : 'HDPE - High Desnsity Polyethylene Resins (Granules)', 
+    type : 'chemical',
+    content : `Blow moulding, Raffia, Injection moulding and Pipe grade.`,
+    imagePath : 'assets/img/HDPE.png'
     },
-    { name : 'Crude Palm Oil', 
-    type : 'agro',
-    content : `Crude palm oil from Malaysia, Indonesia.`,
-    imagePath : 'assets/img/CrudePalm.png'
+    { name : 'LDPE - Low Desnsity Polyethylene Resin', 
+    type : 'chemical',
+    content : `General purpose, Heavy duty, Lamination, Non slip grade.`,
+    imagePath : 'assets/img/LDPE.png'
     },
-    { name : 'Sunflower Oil', 
-    type : 'agro',
-    content : `Sunflower oil from Ukraine.`,
-    imagePath : 'assets/img/Sunflower.png'
+    { name : 'PP Resin', 
+    type : 'chemical',
+    content : `Rafia, Injection moulding, Film, Lamination, Fibre grade.`,
+    imagePath : 'assets/img/PPResins.png'
     },
-    { name : 'Rice', 
-    type : 'agro',
-    content : `All variety rice from India.`,
-    imagePath : 'assets/img/Rice.png'
+    { name : 'GPPS', 
+    type : 'chemical',
+    content : `General Purpose Poly Styrene.`,
+    imagePath : 'assets/img/GPPS.png'
     },
+    { name : 'HIPS', 
+    type : 'chemical',
+    content : `High Purpose Poly Styrene.`,
+    imagePath : 'assets/img/GPPS.png'
+    },
+    { name : 'Titanium Dioxide', 
+    type : 'chemical',
+    content : `Rutile and Anatase grade from Germany, China.`,
+    imagePath : 'assets/img/TitaniumDioxide.png'
+    },
+    { name : 'Melamine', 
+    type : 'chemical',
+    content : `Resin and powdered form from UAE, China.`,
+    imagePath : 'assets/img/Melamine.png'
+    },
+    
   ];
 
 }

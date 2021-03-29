@@ -121,9 +121,9 @@ id="navbar-top"
           >
             <i class="tim-icons icon-paper"> </i> About Us
           </a>
-          <a class="dropdown-item" [routerLink]="['/services']">
+          <!--<a class="dropdown-item" [routerLink]="['/services']">
             <i class="tim-icons icon-bullet-list-67"> </i> Services
-          </a>
+          </a>-->
           <a class="dropdown-item" [routerLink]="['/portfolio']">
             <i class="tim-icons icon-image-02"> </i> Portfolio
           </a>
@@ -239,30 +239,6 @@ id="navbar-top"
                               </div>
                             </tab>
 
-                            <tab>
-                              <ng-template tabHeading>
-                                Agro
-                              </ng-template>
-                              <div class="fix-height-tab">
-                                <ng-container *ngFor="let item of portfolio">
-                                  <div *ngIf="item.type == 'agro'" style="display:flex; margin-left:2%; padding: 1%;">
-                                    <div>
-                                        <img
-                                          alt="Rounded image"
-                                          src="{{item.imagePath}}"
-                                          style="width: 100px; height: 89px; border-radius:50%"
-                                        />
-                                    </div>
-                                    <div class="typography-line">
-                                        <small>{{item.name}}</small>
-                                        <p>
-                                            {{item.content}}
-                                        </p>
-                                    </div> 
-                                  </div>
-                                </ng-container>
-                              </div>
-                            </tab>
                           </tabset>
                         
                           
@@ -297,9 +273,9 @@ id="navbar-top"
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/home']"> Home </a>
               </li>
-              <li class="nav-item">
+              <!--<li class="nav-item">
                 <a class="nav-link" [routerLink]="['/services']"> Services </a>
-              </li>
+              </li>-->
               <li class="nav-item">
                 <a class="nav-link" [routerLink]="['/portfolio']"> Portfolio </a>
               </li>

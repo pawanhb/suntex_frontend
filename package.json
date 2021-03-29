@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod" : "npm run ng build -- --configuration=production",
     "description": "website for suntex ltd",
     "test": "ng test",
     "lint": "ng lint",
